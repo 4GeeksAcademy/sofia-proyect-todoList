@@ -33,6 +33,11 @@ setHoveredIndex(index)
 const handleMouseLeave = () => {
 	setHoveredIndex(null)
 }
+const EliminarTodasTareas = (index) => {
+    const eliminarElemento= [...todoList]
+    eliminarElemento.splice(index)
+    setTodoList(eliminarElemento)
+}
 
 return (
     <div className="bg-light d-flex flex-column justify-content-start align-items-center min-vh-100">
@@ -57,6 +62,8 @@ return (
                 )}
             </div>
         </div>
+        <button onClick={EliminarTodasTareas}> Eliminar todas las tareas</button>
+        
     </div>
     );
 };
